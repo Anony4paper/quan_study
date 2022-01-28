@@ -1,0 +1,174 @@
+ACC (%)
+MNIST
+	ori	brightness	canny_edges	dotted_line	fog	glass_blur	identity	impulse_noise	motion_blur	rotate	scale	shear	shot_noise	spatter	stripe	translate	zigzag
+LeNet1-ori	98.62	84.84	70.52	95.9	54.67	96.07	98.62	89.52	91.98	90.15	89.46	95.62	97.68	96.35	45.39	57.39	81.41
+LeNet1-8-tflite	98.58	85.35	71.29	95.69	55.45	96.02	98.58	89.29	92.12	90.08	89.18	95.62	97.62	96.3	44.97	57.21	81.44
+LeNet1-16-tflite	98.58	85.12	71.02	95.84	54.78	96.03	98.58	89.58	92.06	90.12	89.31	95.62	97.66	96.41	45.29	57.31	81.38
+LeNet1-8-coreml	98.62	84.8	70.54	95.87	54.5	96.02	98.62	89.41	91.91	90.15	89.42	95.63	97.68	96.37	45.57	57.35	81.4
+LeNet1-16-coreml	98.62	84.85	70.51	95.9	54.67	96.07	98.62	89.48	91.99	90.13	89.46	95.63	97.68	96.35	45.35	57.39	81.37
+
+LeNet5-ori	98.87	50.89	74.43	94.56	40.07	94.38	98.87	88.23	93.77	91.77	93.83	97.29	97.17	97.08	68.23	57.46	81.09
+LeNet5-8-tflite	98.89	50.62	74.59	94.55	40.38	94.47	98.89	88.21	93.95	91.66	93.78	97.29	97.23	97.12	68.2	57.61	81.03
+LeNet5-16-tflite	98.88	50.33	74.37	94.5	39.64	94.28	98.88	88.1	93.66	91.68	93.81	97.26	97.16	97.06	68.2	57.41	80.92
+LeNet5-8-coreml	98.88	50.1	74.42	94.52	39.47	94.35	98.88	88.24	93.76	91.72	93.81	97.28	97.14	97.08	68.04	57.46	81.01
+LeNet5-16-coreml	98.87	50.92	74.45	94.56	40.08	94.38	98.87	88.2	93.78	91.77	93.83	97.29	97.17	97.07	68.23	57.45	81.08
+
+
+MNIST
+	ori	brightness	canny_edges	dotted_line	fog	glass_blur	identity	impulse_noise	motion_blur	rotate	scale	shear	shot_noise	spatter	stripe	translate	zigzag
+LeNet1-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+LeNet1-8-tflite	-0.04	0.51	0.77	-0.21	0.78	-0.05	-0.04	-0.23	0.14	-0.07	-0.28	0	-0.06	-0.05	-0.42	-0.18	0.03
+LeNet1-16-tflite	-0.04	0.28	0.5	-0.06	0.11	-0.04	-0.04	0.06	0.08	-0.03	-0.15	0	-0.02	0.06	-0.1	-0.08	-0.03
+LeNet1-8-coreml	0	-0.04	0.02	-0.03	-0.17	-0.05	0	-0.11	-0.07	0	-0.04	0.01	0	0.02	0.18	-0.04	-0.01
+LeNet1-16-coreml	0	0.01	-0.01	0	0	0	0	-0.04	0.01	-0.02	0	0.01	0	0	-0.04	0	-0.04
+
+LeNet5-ori	-
+LeNet5-8-tflite	0.02	-0.27	0.16	-0.01	0.31	0.09	0.02	-0.02	0.18	-0.11	-0.05	0	0.06	0.04	-0.03	0.15	-0.06
+LeNet5-16-tflite	0.01	-0.56	-0.06	-0.06	-0.43	-0.1	0.01	-0.13	-0.11	-0.09	-0.02	-0.03	-0.01	-0.02	-0.03	-0.05	-0.17
+LeNet5-8-coreml	0.01	-0.79	-0.01	-0.04	-0.6	-0.03	0.01	0.01	-0.01	-0.05	-0.02	-0.01	-0.03	0	-0.19	0	-0.08
+LeNet5-16-coreml	0	0.03	0.02	0	0.01	0	0	-0.03	0.01	0	0	0	0	-0.01	0	-0.01	-0.01
+
+
+Disagreement
+MNIST
+	ori	brightness	canny_edges	dotted_line	fog	glass_blur	identity	impulse_noise	motion_blur	rotate	scale	shear	shot_noise	spatter	stripe	translate	zigzag
+LeNet1-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+LeNet1-8-tflite	14	172	172	38	542	41	14	77	79	62	102	22	26	31	113	159	88
+LeNet1-16-tflite	9	67	86	24	133	18	9	28	29	30	43	8	11	13	70	70	41
+LeNet1-8-coreml	2	53	51	8	112	10	2	33	20	13	29	11	10	6	103	67	34
+LeNet1-16-coreml	0	7	4	0	6	0	0	4	1	2	0	2	0	0	6	4	7
+
+LeNet5-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+LeNet5-8-tflite	4	175	73	26	321	44	4	50	59	30	53	22	16	14	88	135	66
+LeNet5-16-tflite	3	100	35	13	112	23	3	35	23	18	22	11	7	10	36	64	34
+LeNet5-8-coreml	1	100	17	12	120	17	1	23	17	10	8	5	6	8	53	47	30
+LeNet5-16-coreml	0	6	2	0	8	0	0	3	1	0	0	0	0	1	1	2	1
+
+ACC (%)
+Cifar-10	ori	brightness	contrast	defocus_blur	elastic_transform	fog	frost	gaussian_blur	gaussian_noise	glass_blur	impulse_noise	jpeg_compression	motion_blur	pixelate	saturate	shot_noise	snow	spatter	speckle_noise	zoom_blur
+NiN-ori	88.27	88.05	86.21	87.79	81.74	87.2	83.19	87.81	76.7	46.15	77.65	82.98	81.17	85.47	83.72	81.57	80.89	84.51	81.62	78.38
+NiN-8-tflite	87.32	88.03	86.25	87.69	81.77	87.18	83.21	87.76	76.76	45.79	77.37	82.72	81.17	85.5	83.59	81.51	80.75	83.45	79.73	78.98
+NiN-16-tflite	88.17	88.04	86.15	87.74	81.76	87.22	83.14	87.75	76.67	45.73	77.31	82.83	81.11	85.47	83.72	81.49	80.86	84.49	81.5	78.31
+NiN-8-coreml	88.3	88.08	86.15	87.73	81.8	87.14	83.19	87.77	76.76	46.13	77.54	82.77	81.31	85.41	83.67	81.48	80.87	84.59	81.56	78.48
+NiN-16-coreml	88.29	88.06	86.17	87.75	81.75	87.17	83.19	87.79	76.64	46.07	77.6	82.93	81.12	85.46	83.7	81.55	80.87	84.53	81.63	78.34
+
+ResNet20-ori	87.44	87.07	85.25	87.22	79.11	86.29	82.04	87.2	72.04	42.26	80.21	81.46	78.21	82.8	84.15	78.96	80.45	85.3	79.47	76.4
+ResNet20-8-tflite	87.48	87.05	85.13	87.01	79.13	86.22	81.76	87.02	71.69	42.17	80.09	81.31	78.67	82.88	83.99	78.78	79.89	85.01	79.13	76.65
+ResNet20-16-tflite	87.04	87.17	85.29	87.23	79.11	86.3	82.09	87.25	72.1	42.38	80.25	81.38	78.17	82.85	84.13	78.99	80.49	85.36	79.46	76.36
+ResNet20-8-coreml	87.4	87.09	85.31	87.25	79.94	86.23	81.33	87.29	69.43	40.82	79.15	80.44	79.86	82.53	84.24	76.98	79.65	84.98	77.48	78.34
+ResNet20-16-coreml	87.47	87.04	85.19	87.19	79.06	86.29	82.05	87.23	71.89	42.12	80.2	81.4	78.19	82.78	84.14	78.84	80.37	85.29	79.43	76.41
+
+
+Cifar-10	ori	brightness	contrast	defocus_blur	elastic_transform	fog	frost	gaussian_blur	gaussian_noise	glass_blur	impulse_noise	jpeg_compression	motion_blur	pixelate	saturate	shot_noise	snow	spatter	speckle_noise	zoom_blur
+NiN-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+NiN-8-tflite	-0.95	-0.02	0.04	-0.1	0.03	-0.02	0.02	-0.05	0.06	-0.36	-0.28	-0.26	0	0.03	-0.13	-0.06	-0.14	-1.06	-1.89	0.6
+NiN-16-tflite	-0.1	-0.01	-0.06	-0.05	0.02	0.02	-0.05	-0.06	-0.03	-0.42	-0.34	-0.15	-0.06	0	0	-0.08	-0.03	-0.02	-0.12	-0.07
+NiN-8-coreml	0.03	0.03	-0.06	-0.06	0.06	-0.06	0	-0.04	0.06	-0.02	-0.11	-0.21	0.14	-0.06	-0.05	-0.09	-0.02	0.08	-0.06	0.1
+NiN-16-coreml	0.02	0.01	-0.04	-0.04	0.01	-0.03	0	-0.02	-0.06	-0.08	-0.05	-0.05	-0.05	-0.01	-0.02	-0.02	-0.02	0.02	0.01	-0.04
+
+ResNet20-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+ResNet20-8-tflite	0.04	-0.02	-0.12	-0.21	0.02	-0.07	-0.28	-0.18	-0.35	-0.09	-0.12	-0.15	0.46	0.08	-0.16	-0.18	-0.56	-0.29	-0.34	0.25
+ResNet20-16-tflite	-0.4	0.1	0.04	0.01	0	0.01	0.05	0.05	0.06	0.12	0.04	-0.08	-0.04	0.05	-0.02	0.03	0.04	0.06	-0.01	-0.04
+ResNet20-8-coreml	0.36	-0.08	0.02	0.02	0.83	-0.07	-0.76	0.04	-2.67	-1.56	-1.1	-0.94	1.69	-0.32	0.11	-2.01	-0.84	-0.38	-1.98	1.98
+ResNet20-16-coreml	0.03	-0.03	-0.06	-0.03	-0.05	0	0.01	0.03	-0.15	-0.14	-0.01	-0.06	-0.02	-0.02	-0.01	-0.12	-0.08	-0.01	-0.04	0.01
+
+
+Disagreement
+	ori	brightness	contrast	defocus_blur	elastic_transform	fog	frost	gaussian_blur	gaussian_noise	glass_blur	impulse_noise	jpeg_compression	motion_blur	pixelate	saturate	shot_noise	snow	spatter	speckle_noise	zoom_blur
+NiN-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+NiN-8-tflite	514	70	78	51	107	57	81	56	96	164	108	82	87	84	89	105	698	604	631	883
+NiN-16-tflite	24	50	42	34	65	29	53	29	57	122	86	55	43	49	49	60	67	43	49	56
+NiN-8-coreml	45	44	48	37	70	37	50	36	65	90	82	57	67	53	49	69	66	52	65	77
+NiN-16-coreml	7	9	6	5	10	6	10	5	8	20	18	12	13	6	8	8	5	4	5	12
+
+ResNet20-ori	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+ResNet20-8-tflite	456	190	250	205	342	236	260	207	343	559	275	259	336	251	262	302	255	228	269	415
+ResNet20-16-tflite	54	51	49	53	84	45	68	60	106	168	72	75	83	61	66	79	68	64	70	125
+ResNet20-8-coreml	181	170	187	175	302	212	317	161	499	754	329	315	325	239	238	409	291	239	398	392
+ResNet20-16-coreml	7	5	10	15	18	16	14	12	29	57	20	21	21	10	22	23	23	15	13	24
+
+
+IMDB	ori	cr	yelp
+(can not support tflite-8bit)
+LSTM-ori	83.78	60.64	71.46
+LSTM-8-tflite	-	-	-
+LSTM-16-tflite	83.7	60.6	71.34
+LSTM-8-coreml	83.78	60.58	71.48
+LSTM-16-coreml	83.78	60.64	71.46
+
+GRU-ori	83.14	53.9	73.52
+GRU-8-tflite	-	-	-
+GRU-16-tflite	83.08	54.18	73.58
+GRU-8-coreml	83.18	54.1	73.6
+GRU-16-coreml	83.14	53.88	73.52
+
+
+IMDB	ori	cr	yelp
+(can not support tflite-8bit)
+LSTM-ori	-	-	-
+LSTM-8-tflite	-	-	-
+LSTM-16-tflite	-0.08	-0.04	-0.12
+LSTM-8-coreml	0	-0.06	0.02
+LSTM-16-coreml	0	0	0
+
+GRU-ori	-	-	-
+GRU-8-tflite	-	-	-
+GRU-16-tflite	-0.06	0.28	0.06
+GRU-8-coreml	0.04	0.2	0.08
+GRU-16-coreml	0	-0.02	0
+
+
+Disagreement	ori	cr	yelp
+(can not support tflite-8bit)
+LSTM-ori	-	-	-
+LSTM-8-tflite	-	-	-
+LSTM-16-tflite	8	8	14
+LSTM-8-coreml	6	9	7
+LSTM-16-coreml	0	0	0
+
+GRU-ori	-	-	-
+GRU-8-tflite	-	-	-
+GRU-16-tflite	3	30	9
+GRU-8-coreml	2	24	8
+GRU-16-coreml	0	1	0
+
+
+Wilds	ori	ood
+DenseNet-ori	76.01	72.6
+DenseNet-8-tflite	57.05	61.69
+DenseNet-16-tflite	75.89	72.18
+DenseNet-8-coreml	67.67	67.42
+DenseNet-16-coreml	76.05	72.6
+
+ResNet50-ori	75.78	70.95
+ResNet50-8-tflite	75.78	72.04
+ResNet50-16-tflite	75.67	71.55
+ResNet50-8-coreml	75.57	70.62
+ResNet50-16-coreml	75.84	70.94
+
+Wilds	ori	ood
+DenseNet-ori	-	-
+DenseNet-8-tflite	-18.96	-10.91
+DenseNet-16-tflite	-0.12	-0.42
+DenseNet-8-coreml	-8.34	-5.18
+DenseNet-16-coreml	0.04	0
+
+ResNet50-ori	-	-
+ResNet50-8-tflite	0	1.09
+ResNet50-16-tflite	-0.11	0.6
+ResNet50-8-coreml	-0.21	-0.33
+ResNet50-16-coreml	0.06	-0.01
+
+
+Disagreement	ori	ood
+DenseNet-ori	-	-
+DenseNet-8-tflite	34.70689232	33.36916641
+DenseNet-16-tflite	2.048074565	2.582318712
+DenseNet-8-coreml	24.95707628	25.92834942
+DenseNet-16-coreml	0.4169732647	0.5047790423
+
+ResNet50-ori	-	-
+ResNet50-8-tflite	3.998037773	5.043116543
+ResNet50-16-tflite	2.293352956	2.967913814
+ResNet50-8-coreml	2.771645818	4.232198359
+ResNet50-16-coreml	0.1962227128	0.2991283214

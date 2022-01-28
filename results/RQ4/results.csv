@@ -1,0 +1,66 @@
+MNIST
+Disagreement
+	ori							LeNet1		LeNet5
+	after	before						after	before	after	before
+LeNet1-ori	-	-					tflite-8	7	14	3	4		-7	-1
+LeNet1-8-tflite	0.07	0.14	7	14			tflite-16	4	9	1	3		-5	-2
+LeNet1-16-tflite	0.04	0.09	4	9			coreml-8	8	2	1	1		6	0
+LeNet1-8-coreml	0.08	0.02	8	2			coreml-16	0	0	0	0		0	0
+LeNet1-16-coreml	0	0	0	0			Old	1		0
+			0	0			New	15		4
+LeNet5-ori	-	-						NiN		ResNet20
+LeNet5-8-tflite	0.03	0.04	3	4			tflite-8	371	514	439	456		-143	-17
+LeNet5-16-tflite	0.01	0.03	1	3			tflite-16	26	24	49	54		2	-5
+LeNet5-8-coreml	0.01	0.01	1	1			coreml-8	31	45	56	181		-14	-125
+LeNet5-16-coreml	0	0	0	0			coreml-16	4	7	13	7		-3	6
+							Old	47		100
+							New	354		380
+								LSTM		GRU
+							tflite-16	7	8	1	3		-1	-2
+							coreml-8	2	6	0	2		-4	-2
+	ori						coreml-16	0	0	0	0		0	0
+CIFAR10	after	before					Old	0		0
+NiN-ori	-	-					New	8		1
+NiN-8-tflite	3.71	5.14	371	514				DenseNet		ResNet50
+NiN-16-tflite	0.26	0.24	26	24			tflite-8	3319	2830	373	326		489	47
+NiN-8-coreml	0.31	0.45	31	45			tflite-16	12	167	143	187		-155	-44
+NiN-16-coreml	0.04	0.07	4	7			coreml-8	7	2035	101	226		-2028	-125
+							coreml-16	2	34	27	16		-32	11
+ResNet20-ori	-	-					Old	2230		24
+ResNet20-8-tflite	4.39	4.56	439	456			New	1094		438
+ResNet20-16-tflite	0.49	0.54	49	54
+ResNet20-8-coreml	0.56	1.81	56	181
+ResNet20-16-coreml	0.13	0.07	13	7
+
+
+
+	ori
+IMDB	after	before
+LSTM-ori	-	-
+LSTM-8-tflite	-	-
+LSTM-16-tflite	0.14	0.16	7	8
+LSTM-8-coreml	0.04	0.12	2	6
+LSTM-16-coreml	0	0	0	0
+
+GRU-ori	-	-
+GRU-8-tflite	-	-
+GRU-16-tflite	0.02	0.06	1	3
+GRU-8-coreml	0	0.04	0	2
+GRU-16-coreml	0	0	0	0
+
+
+
+
+	ori
+WILDS	after	before
+DenseNet-ori	-	-
+DenseNet-8-tflite	40.70394898	34.70689232	3319	2830
+DenseNet-16-tflite	0.1471670346	2.048074565	12	167
+DenseNet-8-coreml	0.08584743684	24.95707628	7	2035
+DenseNet-16-coreml	0.0245278391	0.4169732647	2	34
+
+ResNet50-ori	-	-
+ResNet50-8-tflite	4.574441992	3.998037773	373	326
+ResNet50-16-tflite	1.753740495	2.293352956	143	187
+ResNet50-8-coreml	1.238655874	2.771645818	101	226
+ResNet50-16-coreml	0.3311258278	0.1962227128	27	16
