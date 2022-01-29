@@ -19,7 +19,7 @@
 ```
 
 ## Others
-- All the models: https://drive.google.com/drive/folders/1XuIpCKbnjzKkabKdiv_TSGg9Vlo2aQyC
+- All the models: https://zenodo.org/record/5916315#.YfT7oBNKhQI
 - WILDs data: https://wilds.stanford.edu/
 - MNIST-C data: https://github.com/google-research/mnist-c
 - CIFAR10-C data: https://zenodo.org/record/2535967#.YfRacRNKhQI
