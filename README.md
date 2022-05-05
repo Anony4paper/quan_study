@@ -1,4 +1,3 @@
-### Characterizing and Understanding the Behavior of Quantized Models for Reliable Deployment
 
 ## Requirements
     - Tensorflow 2.3
