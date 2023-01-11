@@ -1,0 +1,107 @@
+from sklearn.metrics import roc_curve,auc,roc_auc_score,average_precision_score
+import numpy as np
+import json
+from sklearn.linear_model import LogisticRegressionCV
+from sklearn.model_selection import train_test_split
+
+
+def get_metric_scores(y_true, y_score, tpr_level):
+    fpr, tpr, thresholds = roc_curve(y_true, y_score)
+    auroc = auc(fpr, tpr)
+    tpr95_pos = np.abs(tpr - tpr_level).argmin()
+    tnr_at_tpr95 = 1. - fpr[tpr95_pos]
+    aupr = average_precision_score(y_true, y_score)
+    results = {"TNR": tnr_at_tpr95, 'AUROC': auroc, 'AUPR': aupr, "TNR_threshold": thresholds[tpr95_pos],
+               'FPR': fpr, 'TPR': tpr, "threshold": thresholds}
+
+    return results
+
+
+def block_split(X, Y, train_num, partition = 5000):
+
+    X_pos, Y_pos = X[:partition], Y[:partition]
+    X_neg, Y_neg = X[partition:], Y[partition:]
+    np.random.seed(0)
+    random_index = np.arange(partition)
+    np.random.shuffle(random_index)
+    X_pos, Y_pos = X_pos[random_index], Y_pos[random_index]
+    X_neg, Y_neg = X_neg[random_index], Y_neg[random_index]
+
+    X_train = np.concatenate((X_pos[:train_num], X_neg[:train_num]))
+    Y_train = np.concatenate((Y_pos[:train_num], Y_neg[:train_num]))
+    X_test = np.concatenate((X_pos[train_num:], X_neg[train_num:]))
+    Y_test = np.concatenate((Y_pos[train_num:], Y_neg[train_num:]))
+    return X_train, Y_train, X_test, Y_test
+
+
+
+file_names = ["../results/RQ4/wilds/resnet50_mixup_entropy.json",
+              "../results/RQ4/wilds/resnet50_mixup_gini.json",
+              "../results/RQ4/wilds/resnet50_mixup_margin.json",
+              "../results/RQ4/wilds/resnet50_mixup_lc.json"]
+
+
+for file_name in file_names:
+    with open(file_name) as json_file:
+        data = json.load(json_file)
+
+    in_disagreement_point = []
+    random_point = []
+    diss_point = []
+    normal_point = []
+    label_point = []
+    value_point = []
+    for single_data in data['results']:
+        # single_data = data['results'][0]
+        in_len = len(single_data['union_margin_list'])
+        random_len = len(single_data['random_margin_list'])
+        if in_len < random_len:
+            save_len = in_len
+        else:
+            save_len = random_len
+
+        in_disagreement_point += single_data['union_margin_list'][:save_len]
+        value_point += single_data['union_margin_list'][:save_len]
+        label_point += [1 for i in range(save_len)]
+        random_point += single_data['random_margin_list'][:save_len]
+        value_point += single_data['random_margin_list'][:save_len]
+        label_point += [0 for i in range(save_len)]
+    # print(len(in_disagreement_point))
+    # print(len(random_point))
+    # print(in_disagreement_point)
+    # print(random_point)
+    # corr = stats.ttest_ind(in_disagreement_point, random_point, equal_var=False)
+
+    # print(in_disagreement_point)
+    # print(random_point)
+    label_point = np.asarray(label_point)
+    value_point = np.asarray(value_point)
+    label_point = label_point.reshape(-1, 1)
+    value_point = value_point.reshape(-1, 1)
+    partition = len(label_point)
+    train_num = partition - 1000
+    results = get_metric_scores(label_point, value_point, tpr_level=0.95)
+    # print("\tAUROC:{auroc:6.2f}\tAUPR:{aupr:6.2f}\tTNR:{tnr:6.2f}".format(
+    #     auroc=results['AUROC'] * 100.,
+    #     aupr=results['AUPR'] * 100.,
+    #     tnr=results['TNR'] * 100.,
+    # ))
+    # print("threshold: ", results['TNR_threshold'])
+    # print(partition)
+    # print(train_num)
+    # X_train, Y_train, X_test, Y_test = block_split(value_point, label_point, train_num=train_num, partition=partition)
+
+    # lr = LogisticRegressionCV(n_jobs=-1, cv=3, max_iter=5000).fit(value_point[:-500], label_point[:-500])
+    # y_pred = lr.predict_proba(value_point[-500:])[:, 1]
+    #
+    # results = get_metric_scores(label_point[-500:], y_pred, tpr_level=0.95)
+    X_train, X_test, y_train, y_test = train_test_split(value_point, label_point, test_size=0.1, random_state=42)
+    lr = LogisticRegressionCV(n_jobs=-1, cv=3, max_iter=5000).fit(X_train, y_train)
+    y_pred = lr.predict_proba(X_test)[:, 1]
+
+    results = get_metric_scores(y_test, y_pred, tpr_level=0.95)
+    print("\tAUROC:{auroc:6.2f}\tAUPR:{aupr:6.2f}\tTNR:{tnr:6.2f}".format(
+        auroc=results['AUROC'] * 100.,
+        aupr=results['AUPR'] * 100.,
+        tnr=results['TNR'] * 100.,
+    ))
