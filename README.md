@@ -11,7 +11,7 @@
     ├── ori_model_eval.py         # original model evaluation
     ├── tflite_evaluation.py      # tensorflowlite model evaluation
 ├── model_prepare     
-    ├── model_training.py         # train the original model
+    ├── model_training.py         # train the original model and regression model for RQ3
 ├── results                       # results for RQ1,2,3,4
 ├── retrain                       # retrain the model with disagreements
 ├── training_strategy             # training strategy
