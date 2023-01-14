@@ -6,6 +6,7 @@
 ## project structure
 ```
 ├── datasets                      # put the data here
+├── motivating_examples           # motivating examples of our work
 ├── model_evaluation              
     ├── coreml_evaluation.py      # coreml model evaluation
     ├── ori_model_eval.py         # original model evaluation
