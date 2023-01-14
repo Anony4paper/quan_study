@@ -11,7 +11,7 @@ this crop most likely has the Soy Downy Mildew with the highest possibility amon
 
 ##### Figure 1: Example of crop disease classification application provided by AgriPredict.
 
-<img align="center" src="input.png" width="300"> <img align="center" src="output.png" width="300"> 
+<img align="center" src="input.png" width="300"> <img align="center" src="results.png" width="300"> 
 
 AgriPredict also provides the TensorFlowLite version of the model (after quantization). 
 Therefore, given the two versions of model and the input data, we can check if there are 
@@ -31,7 +31,7 @@ the model may produce different and unexpected results when dealing with the sam
 
 ##### Figure 2: The Top-1 prediction (disease class and possibility) results of the  original model and its quantization version.
 
-<img align="center" src="moti.png" width="300"> 
+<img align="center" src="moti.png" width="800"> 
 
 
 [1] https://www.agripredict.com/
